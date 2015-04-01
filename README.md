@@ -30,7 +30,7 @@ All collections are lowercase and in the plural form. e.g "threads" and not"Thre
   mongoose.connect("mongodb://d3user:DdJXhhsd2@proximus.modulusmongo.net:27017/purYv9ib");
 ```
 #How to create a mock database object 
-In this example I will be using the Tread schema. (assuming step 3 above  has alreaddy been done )
+In this example I will be using the Tread schema. (assuming step 3 above  has alreaddy been done ). This is just an example of how one can use the schemas and mongoose.
 ```
    
     var Thread = require('../models/thread');
@@ -69,7 +69,7 @@ In this example I will be using the Tread schema. (assuming step 3 above  has al
         });
 ```
 
-# How to view what is goin gon in the database
+# How to view what is going on in the database
 Download [Robomongo](http://robomongo.org/)
 ## Settings
 ### 1. Connection
