@@ -1,6 +1,8 @@
 
 
-#Changes will/can be made to these files, without notice.  If you see any errors or mistakes please report them. Report database change requirements to middle level integration teams. 
+# Changes will/can be made to these files, without notice. 
+# If you see any errors or mistakes please report them. 
+# Please report database requirements changes to middle level integration team leaders. 
 
 
 # DatabaseStuff
