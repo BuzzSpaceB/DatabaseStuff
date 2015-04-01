@@ -13,9 +13,11 @@ All collections are lowercase and in the plural form. e.g "threads" and not"Thre
 
 #How to use
 1. Include the mongoose module `var mongoose = require('mongoose');`
-2. Include the schema you desire e.g save the schgama file gound in this repo to a folder called modules in your app
+2. Include the schema you desire e.g save the schema file found in this repo to a folder called modules in your app
 3. In the 'main' file of your application or where you want to use the database use sometging similar to this:
 ```javascript
+  var mongoose = require('mongoose');
+  
   mongoose.connection.on('open', function (ref) {
       console.log('Connected to mongo server.');
   });
