@@ -8,7 +8,8 @@ var ThreadSchema = new mongoose.Schema({
     closed          : Boolean,                  /* Flag to show thread is closed */
     hidden          : Boolean,                  /* Flag to show thread is hidden */
     level           : Number,                    /* Shows on which level the thread is currently at */
-    post_id         : String                    /* The post that is connected to the thread */
+    post_id         : String,                    /* The post that is connected to the thread */
+    subject         : String                    /*The subject of the post that is connected to the thread*/
 });
 
 module.exports = mongoose.model("threads", ThreadSchema);
