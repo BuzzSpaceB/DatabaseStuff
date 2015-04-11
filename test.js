@@ -1,49 +1,41 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+    , ds = require('./index');
 
-var configDB = require('./config');
+//you would simply have after adding as a dependency to package.json
+// var mongoose = require('mongoose')
+//   , ds = require('ds');
 
-mongoose.connection.on('open', function (ref) {
-    console.log('Connected to mongo server.');
-});
+ds.init(mongoose);
+var space = ds.models.space;
 
-mongoose.connection.on('error', function (err) {
-    console.log('Could not connect to mongo server!');
-    console.log(err);
-});
+/* Create */
+    var newSpace = space();
+        newSpace.module_id = "COS301";
+        newSpace.registered_users = [{ user_id: "u12345678" }, { user_id: "u87654321" }];
+        newSpace.academic_year = 2015;
+        newSpace.is_open = true;
+        newSpace.root_thread_id	 = "5527c698faa3e73c0f15b7fc";
+        newSpace. administrators = [{ user_id: "u11111111" }, { user_id: "u99999999" }];
 
-mongoose.connect("mongodb://d3user:DdJXhhsd2@proximus.modulusmongo.net:27017/purYv9ib");
+    //Saves the new thread to the database
+    newSpace.save(function (err) {
+        if (err) console.log("ERR: " + err);
+        console.log("Saving: " + JSON.stringify(newSpace));
+    });
 
-var Thread = require('./models/thread');
+/* Read */
+    //finds all the spaces in the db
+    space.find(function (err, aSpace) {
+        if (err)
+            console.log("ERR: " + err);
+        else
+            console.log("Found: " + JSON.stringify(aSpace));
+    });
 
-//create mock thread
-var newThread = new Thread();
-newThread.thread_id = "1";
-newThread.parent_thread_id = "0";
-newThread.user_id = "u12345678";
-newThread.num_children = 0;
-newThread.closed = false;
-newThread.hidden = false;
-newThread.level = "1";
-newThread.post_id = "1";
-
-//This is how you save it
-newThread.save(function (err) {
-    if (err) console.log("ERR: " + err);
-    console.log("Saving: " + JSON.stringify(newThread));
-});
-
-//finds all the threads in the db
-Thread.find(function (err, aThread) {
-    if (err)
-        console.log("ERR: " + err);
-    else
-        console.log("Found: " + JSON.stringify(aThread));
-});
-
-//finds ONE spesific threads in the db
-Thread.findOne({ 'thread_id' :  "1" }, function (err, aThread) {
-    if (err)
-        console.log("ERR: " + err);
-    else
-        console.log("Found: " + JSON.stringify(aThread));
-});
+    //finds ONE spesific space in the db
+    space.findOne({ 'module_id' :  "COS301" }, function (err, aSpace) {
+        if (err)
+            console.log("ERR: " + err);
+        else
+            console.log("Found: " + JSON.stringify(aSpace));
+    });

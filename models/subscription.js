@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var subscriptionSchema = mongoose.Schema({
+var SubscriptionShcema = mongoose.Schema({
     User_id: String,
 	registeredTo: [String],
 	Thread_id: String

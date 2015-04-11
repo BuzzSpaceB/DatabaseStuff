@@ -9,4 +9,4 @@ var SpaceSchema = mongoose.Schema({
     administrators		: [{ user_id: String}]
 });
 
-module.exports = mongoose.model("modules", ModuleSchema);
+module.exports = mongoose.model("spaces", SpaceSchema);
