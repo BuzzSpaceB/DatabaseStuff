@@ -2,12 +2,12 @@
  * Created by Thinus on 2015-04-11.
  */
 
-function Common() {
+function DS() {
     //empty array to hold mongoose Schemas
     this.models = {};
 }
 
-Common.prototype.init = function(mongoose) {
+DS.prototype.init = function(mongoose) {
 
     mongoose.connection.on('open', function (ref) {
         console.log('Connected to mongo server.');
@@ -48,37 +48,6 @@ Common.prototype.init = function(mongoose) {
     }
 };
 
-var ds = new Common();
+var ds = new DS();
 
 module.exports = ds;
-
-/* # How to use
-    1. Add module to package.json dependencies 
-        ```
-            "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master",
-        ```
-    2. Init the models when your module starts up
-        ```
-             var mongoose = require('mongoose')
-             , ds = require('ds');
-
-             ds.init(mongoose);
-        ```
-    3. Where you want to use a schema/the database use the following template
-       ```
-            var ds = require('ds');
-            var modelName = ds.models.modelName;
-
-            //then you can use it as you normally would have used a schema.
-
-            modelName.findById(req.params.id, function(err, objFromDB) {
-                if (err)
-                    console.log(err.message);
-                else{
-                    var model= {modelData: objFromDB};
-                    //do what you want
-                }
-            });
-       ```
-    # Example
- */

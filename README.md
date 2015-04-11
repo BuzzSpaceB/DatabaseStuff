@@ -1,74 +1,42 @@
-
-
-# Changes will/can be made to these files, without notice. 
+# Changes will/can be made to these files, without notice.
 # If you see any errors or mistakes please report them. 
-# Please report database requirements changes to middle level integration team leaders. 
-
+# Please report database requirements changes to middle level integration team leaders.
 
 # DatabaseStuff
-We setup a database for everyone to use. So you dont need to use "localhost" anymore, use `mongodb://d3user:DdJXhhsd2@proximus.modulusmongo.net:27017/purYv9ib` as the connection url. That way we are all using the same database. 
+We setup a modeule fot everyone to use which manages the database, from connection to all teh schemas.
 
-All collections are lowercase and in the plural form. e.g "threads" and not"Thread"
+All collections are lowercase and in the plural form. e.g "threads" and not"Thread".
+To gain access to a collection via the module use the singular form form. e.g "thread" and not"Threads".
 
+# How to use
+    1. Add module to package.json dependencies
+        ```
+            "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master"
+        ```
+    2. Init the models when your module starts up
+        ```
+             var mongoose = require('mongoose')
+             , ds = require('DatabaseStuff');
 
-#How to use
-1. Include the mongoose module `var mongoose = require('mongoose');`
-2. Include the schema you desire e.g save the schema file found in this repo to a folder called modules in your app
-3. In the 'main' file of your application or where you want to use the database use sometging similar to this:
-```javascript
-  var mongoose = require('mongoose');
-  
-  mongoose.connection.on('open', function (ref) {
-      console.log('Connected to mongo server.');
-  });
-  
-  mongoose.connection.on('error', function (err) {
-      console.log('Could not connect to mongo server!');
-      console.log(err);
-  });
-  
-  mongoose.connect("mongodb://d3user:DdJXhhsd2@proximus.modulusmongo.net:27017/purYv9ib");
-```
-#How to create a mock database object 
-In this example I will be using the Thread schema. (assuming step 3 above  has alreaddy been done ). This is just an example of how one can use the schemas and mongoose.
-```
-   
-    var Thread = require('../models/thread');
-    
-     //create mock thread according to the schema 
-    var newThread = new Thread();
-        newThread.thread_id = "1";
-        newThread.parent_thread_id = "0";
-        newThread.user_id = "u12345678";
-        newThread.num_children = 0;
-        newThread.closed = false;
-        newThread.hidden = false;
-        newThread.level = "1";
-        newThread.post_id = "1";  
-        
-        //This is how you save it 
-        newThread.save(function (err) {
-            if (err) console.log("ERR: " + err);
-            console.log("Saving: " + JSON.stringify(newStudent));
-        });
+             ds.init(mongoose);
+        ```
+    3. Where you want to use a schema/the database use the following template
+       ```
+            var ds = require('DatabaseStuff');
+            var modelName = ds.models.modelName;
 
-    //finds all the threads in the db
-        Thread.find(function (err, aThread) {
-            if (err)
-                console.log("ERR: " + err);
-            else
-                console.log("Found: " + JSON.stringify(aThread));
-        });
-        
-    //finds ONE spesific threads in the db
-        Thread.findOne({ 'thread_id' :  "1" }, function (err, aThread) {
-            if (err)
-                console.log("ERR: " + err);
-            else
-                console.log("Found: " + JSON.stringify(aThread));
-        });
-```
+            //then you can use it as you normally would have used a schema.
 
+            modelName.findById(req.params.id, function(err, objFromDB) {
+                if (err)
+                    console.log(err.message);
+                else{
+                    var model= {modelData: objFromDB};
+                    //do what you want
+                }
+            });
+       ```
+    # Example
 # How to view what is going on in the database
 Download [Robomongo](http://robomongo.org/)
 ## Settings

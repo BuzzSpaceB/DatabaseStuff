@@ -1,0 +1,20 @@
+{
+  "name": "DatabaseStuff",
+  "version": "1.0.0",
+  "description": "This module contains functionality to connect to and use the database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuzzSpaceB/DatabaseStuff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BuzzSpaceB/DatabaseStuff/issues"
+  },
+  "homepage": "https://github.com/BuzzSpaceB/DatabaseStuff",
+  "dependencies": {
+    "mongoose": "^4.0.1"
+  }
+}
