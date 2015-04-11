@@ -9,7 +9,9 @@ To gain access to a collection via the module use the singular form form. e.g "t
 # How to use
 1. Add module to package.json dependencies
     ```
+
         "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master"
+
     ```
 2. Let npm download the module, in the console run
     ```
