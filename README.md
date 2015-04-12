@@ -1,10 +1,27 @@
 ## Changes will/can be made to these files, without notice.
 
 # DatabaseStuff
-We setup a module fot everyone to use which manages the database, from connection to all teh schemas.
+We setup a module fot everyone to use which manages the database, from connection to all the schemas.
 
 All collections are lowercase and in the plural form. e.g "threads" and not"Thread".
-To gain access to a collection via the module use the singular form form. e.g "thread" and not"Threads".
+All variables (to gain access to a collection via the module) use the singular form form. e.g "thread" and not"Threads".
+```
+var modelName = ds.models.modelName;
+//e.g.
+var space = ds.models.space;
+var appraisal = ds.models.appraisal;
+var module = ds.models.module;
+var notification = ds.models.notification;
+var post = ds.models.post;
+var role = ds.models.role;
+var serviceRestriction = ds.models.serviceRestriction;
+var space = ds.models.space;
+var subscription = ds.models.subscription;
+var subscription = ds.models.thread;
+var subscription = ds.models.user;
+var subscription = ds.models.userSubscriptionSettings;
+//these variables are then the schemas 
+```
 
 # How to use
 1. Add module to package.json dependencies
