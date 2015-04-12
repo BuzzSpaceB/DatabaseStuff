@@ -62,91 +62,91 @@ var userSubscriptionSettings = ds.models.userSubscriptionSettings;
   ```
 # Example
 See the /test folder for more
-```javascript
-var mongoose = require('mongoose')
-    , ds = require('DatabaseStuff');
+    ```javascript
+    var mongoose = require('mongoose')
+        , ds = require('DatabaseStuff');
 
-ds.init(mongoose);
+    ds.init(mongoose);
 
-var space = ds.models.space;
-var appraisal = ds.models.appraisal;
-var module = ds.models.module;
-var notification = ds.models.notification;
-var post = ds.models.post;
-var role = ds.models.role;
-var serviceRestriction = ds.models.serviceRestriction;
-var subscription = ds.models.subscription;
-var thread = ds.models.thread;
-var user = ds.models.user;
-var userSubscriptionSettings = ds.models.userSubscriptionSettings;
+    var space = ds.models.space;
+    var appraisal = ds.models.appraisal;
+    var module = ds.models.module;
+    var notification = ds.models.notification;
+    var post = ds.models.post;
+    var role = ds.models.role;
+    var serviceRestriction = ds.models.serviceRestriction;
+    var subscription = ds.models.subscription;
+    var thread = ds.models.thread;
+    var user = ds.models.user;
+    var userSubscriptionSettings = ds.models.userSubscriptionSettings;
 
-appraisal.find(function (err, a) {
-    if (err)
-        console.log("ERR appraisal.find: " + err);
-    else
-        console.log("Found " + a.length + " appraisals in the database.");
-});
-module.find(function (err, a) {
-    if (err)
-        console.log("ERR module.find: " + err);
-    else
-        console.log("Found " + a.length + " modules in the database.");
-});
-notification.find(function (err, a) {
-    if (err)
-        console.log("ERR notification.find: " + err);
-    else
-        console.log("Found " + a.length + " notifications in the database.");
-});
-post.find(function (err, a) {
-    if (err)
-        console.log("ERR post.find: " + err);
-    else
-        console.log("Found " + a.length + " posts in the database.");
-});
+    appraisal.find(function (err, a) {
+        if (err)
+            console.log("ERR appraisal.find: " + err);
+        else
+            console.log("Found " + a.length + " appraisals in the database.");
+    });
+    module.find(function (err, a) {
+        if (err)
+            console.log("ERR module.find: " + err);
+        else
+            console.log("Found " + a.length + " modules in the database.");
+    });
+    notification.find(function (err, a) {
+        if (err)
+            console.log("ERR notification.find: " + err);
+        else
+            console.log("Found " + a.length + " notifications in the database.");
+    });
+    post.find(function (err, a) {
+        if (err)
+            console.log("ERR post.find: " + err);
+        else
+            console.log("Found " + a.length + " posts in the database.");
+    });
 
-role.find(function (err, a) {
-    if (err)
-        console.log("ERR role.find: " + err);
-    else
-        console.log("Found " + a.length + " roles in the database.");
-});
+    role.find(function (err, a) {
+        if (err)
+            console.log("ERR role.find: " + err);
+        else
+            console.log("Found " + a.length + " roles in the database.");
+    });
 
-serviceRestriction.find(function (err, a) {
-    if (err)
-        console.log("ERR serviceRestriction.find: " + err);
-    else
-        console.log("Found " + a.length + " serviceRestrictions in the database.");
-});
+    serviceRestriction.find(function (err, a) {
+        if (err)
+            console.log("ERR serviceRestriction.find: " + err);
+        else
+            console.log("Found " + a.length + " serviceRestrictions in the database.");
+    });
 
-subscription.find(function (err, a) {
-    if (err)
-        console.log("ERR subscription.find: " + err);
-    else
-        console.log("Found " + a.length + " subscriptions in the database.");
-});
+    subscription.find(function (err, a) {
+        if (err)
+            console.log("ERR subscription.find: " + err);
+        else
+            console.log("Found " + a.length + " subscriptions in the database.");
+    });
 
-thread.find(function (err, a) {
-    if (err)
-        console.log("ERR thread.find: " + err);
-    else
-        console.log("Found " + a.length + " threads in the database.");
-});
+    thread.find(function (err, a) {
+        if (err)
+            console.log("ERR thread.find: " + err);
+        else
+            console.log("Found " + a.length + " threads in the database.");
+    });
 
-user.find(function (err, a) {
-    if (err)
-        console.log("ERR user.find: " + err);
-    else
-        console.log("Found " + a.length + " users in the database.");
-});
+    user.find(function (err, a) {
+        if (err)
+            console.log("ERR user.find: " + err);
+        else
+            console.log("Found " + a.length + " users in the database.");
+    });
 
-userSubscriptionSettings.find(function (err, a) {
-    if (err)
-        console.log("ERR userSubscriptionSettings.find: " + err);
-    else
-        console.log("Found " + a.length + " userSubscriptionSettings in the database.");
-});
-```
+    userSubscriptionSettings.find(function (err, a) {
+        if (err)
+            console.log("ERR userSubscriptionSettings.find: " + err);
+        else
+            console.log("Found " + a.length + " userSubscriptionSettings in the database.");
+    });
+    ```
 
 # How to view what is going on in the database
 Download [Robomongo](http://robomongo.org/)
