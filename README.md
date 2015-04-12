@@ -17,9 +17,6 @@ var role = ds.models.role;
 var serviceRestriction = ds.models.serviceRestriction;
 var space = ds.models.space;
 var subscription = ds.models.subscription;
-var subscription = ds.models.thread;
-var subscription = ds.models.user;
-var subscription = ds.models.userSubscriptionSettings;
 //these variables are then the schemas 
 ```
 
