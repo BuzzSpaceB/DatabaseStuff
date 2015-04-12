@@ -5,7 +5,7 @@ We setup a module fot everyone to use which manages the database, from connectio
 
 All collections are lowercase and in the plural form. e.g "threads" and not"Thread".
 All variables (to gain access to a collection via the module) use the singular form form. e.g "thread" and not"Threads".
-```
+```javascript
 var modelName = ds.models.modelName;
 //e.g.
 var space = ds.models.space;
@@ -25,7 +25,7 @@ var subscription = ds.models.userSubscriptionSettings;
 
 # How to use
 1. Add module to package.json dependencies
-```
+```javascript
   "dependencies": {
     "mongoose": "^4.0.1",
     "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master"
@@ -37,14 +37,14 @@ var subscription = ds.models.userSubscriptionSettings;
         npm install
     ```
 3. Init the models when your module starts up
-```
+```javascript
      var mongoose = require('mongoose')
      , ds = require('DatabaseStuff');
 
      ds.init(mongoose);
 ```
 4. Where you want to use a schema/the database use the following template
-```
+```javascript
     var ds = require('DatabaseStuff');
     var modelName = ds.models.modelName;
 
@@ -61,7 +61,7 @@ var subscription = ds.models.userSubscriptionSettings;
 ```
 # Example
 See the /test folder
-```
+```javascript
 var mongoose = require('mongoose')
     , ds = require('DatabaseStuff');
 
