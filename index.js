@@ -38,14 +38,13 @@ DS.prototype.init = function(mongoose) {
     /*
         Loads the required modules into the application.
      */
-    require('./models/appraisal');
+
     require('./models/module');
     require('./models/notification');
     require('./models/post');
     require('./models/role');
     require('./models/service');
     require('./models/service_restriction');
-    require('./models/space');
     require('./models/subscription');
     require('./models/thread');
     require('./models/user');
@@ -56,8 +55,8 @@ DS.prototype.init = function(mongoose) {
         The model name you use here must match the name you used in the schema file.
     */
     this.models = {
-        space: mongoose.model('spaces'),
-        appraisal: mongoose.model("appraisals"),
+        space: require('./models/space'),
+        appraisal: require('./models/appraisal'),
         module: mongoose.model('modules'),
         notification: mongoose.model('notifications'),
         post: mongoose.model('posts'),
