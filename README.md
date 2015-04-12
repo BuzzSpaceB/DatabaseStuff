@@ -24,41 +24,42 @@ var subscription = ds.models.userSubscriptionSettings;
 ```
 
 # How to use
-1. Add module to package.json dependencies
-```javascript
-  "dependencies": {
-    "mongoose": "^4.0.1",
-    "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master"
-  }
-    
-```
-2. Let npm download the module, in the console run
+1. Add module dependancy to package.json file (you need mongoose as well)
+  ```javascript
+    "dependencies": {
+      ...
+      "mongoose": "^4.0.1",
+      "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master"
+    }
+      
+  ```
+2. Let npm download the modules. In the console run:
     ```
         npm install
     ```
-3. Init the models when your module starts up
-```javascript
-     var mongoose = require('mongoose')
-     , ds = require('DatabaseStuff');
-
-     ds.init(mongoose);
-```
+3. Initiate the models in your applications main file /when your buzz module starts up
+  ```javascript
+       var mongoose = require('mongoose')
+       , ds = require('DatabaseStuff');
+       
+       ds.init(mongoose);//this line is very important
+  ```
 4. Where you want to use a schema/the database use the following template
-```javascript
-    var ds = require('DatabaseStuff');
-    var modelName = ds.models.modelName;
-
-    //then you can use it as you normally would have used a schema.
-
-    modelName.findById(req.params.id, function(err, objFromDB) {
-        if (err)
-            console.log(err.message);
-        else{
-            var model= {modelData: objFromDB};
-            //do what you want
-        }
-    });
-```
+  ```javascript
+      var ds = require('DatabaseStuff');
+      var modelName = ds.models.modelName;
+  
+      //then you can use it as you normally would have used a schema.
+  
+      modelName.findById(req.params.id, function(err, objFromDB) {
+          if (err)
+              console.log(err.message);
+          else{
+              var model= {modelData: objFromDB};
+              //do what you want
+          }
+      });
+  ```
 # Example
 See the /test folder
 ```javascript
