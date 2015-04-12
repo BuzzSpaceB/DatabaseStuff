@@ -39,7 +39,6 @@ DS.prototype.init = function(mongoose) {
      */
     mongoose.connect("mongodb://d3user:DdJXhhsd2@proximus.modulusmongo.net:27017/purYv9ib");
 
-
     /*
         Loads the required modules into the application.
      */
@@ -61,7 +60,7 @@ DS.prototype.init = function(mongoose) {
         The model name you use here must match the name you used in the schema file.
     */
     this.models = {
-        appraisal: mongoose.model('appraisals'),
+        appraisal: mongoose.model("appraisals"),
         module: mongoose.model('modules'),
         notification: mongoose.model('notifications'),
         post: mongoose.model('posts'),
