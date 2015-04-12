@@ -15,5 +15,4 @@ var AppraisalSchema = mongoose.Schema({
         }]
 });
 
-
 module.exports = mongoose.model("appraisals", AppraisalSchema);
