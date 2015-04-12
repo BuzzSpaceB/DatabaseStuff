@@ -55,12 +55,12 @@ DS.prototype.init = function(mongoose) {
     require('./models/thread');
     require('./models/user');
     require('./models/user_subscription_settings_schema');
-
-    /*
+    require('./models/resources');
+        /*
         This is just to make referencing the models easier within the buzz modules.
         The model name you use here must match the name you used in the schema file.
      */
-
+     */
     this.models = {
         appraisal: mongoose.model('appraisals'),
         module: mongoose.model('modules'),
@@ -72,9 +72,9 @@ DS.prototype.init = function(mongoose) {
         subscription: mongoose.model('subscriptions'),
         thread: mongoose.model('threads'),
         user: mongoose.model('users'),
-        userSubscriptionSettings: mongoose.model('usersubscriptionsettings')
+        userSubscriptionSettings: mongoose.model('usersubscriptionsettings'),
+        resource: mongoose.model('resources')
     }
-
 };
 
 //Creates an instance of the DS class
