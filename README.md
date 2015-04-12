@@ -8,38 +8,40 @@ To gain access to a collection via the module use the singular form form. e.g "t
 
 # How to use
 1. Add module to package.json dependencies
-    ```
-
-        "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master"
-
-    ```
+```
+  "dependencies": {
+    "mongoose": "^4.0.1",
+    "DatabaseStuff": "git://github.com/BuzzSpaceB/DatabaseStuff#master"
+  }
+    
+```
 2. Let npm download the module, in the console run
     ```
         npm install
     ```
 3. Init the models when your module starts up
-    ```
-         var mongoose = require('mongoose')
-         , ds = require('DatabaseStuff');
+```
+     var mongoose = require('mongoose')
+     , ds = require('DatabaseStuff');
 
-         ds.init(mongoose);
-    ```
+     ds.init(mongoose);
+```
 4. Where you want to use a schema/the database use the following template
-   ```
-        var ds = require('DatabaseStuff');
-        var modelName = ds.models.modelName;
+```
+    var ds = require('DatabaseStuff');
+    var modelName = ds.models.modelName;
 
-        //then you can use it as you normally would have used a schema.
+    //then you can use it as you normally would have used a schema.
 
-        modelName.findById(req.params.id, function(err, objFromDB) {
-            if (err)
-                console.log(err.message);
-            else{
-                var model= {modelData: objFromDB};
-                //do what you want
-            }
-        });
-   ```
+    modelName.findById(req.params.id, function(err, objFromDB) {
+        if (err)
+            console.log(err.message);
+        else{
+            var model= {modelData: objFromDB};
+            //do what you want
+        }
+    });
+```
 # Example
 See the /test folder
 ```
