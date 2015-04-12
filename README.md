@@ -25,6 +25,7 @@ var userSubscriptionSettings = ds.models.userSubscriptionSettings;
 
 # How to use
 1. Add module dependancy to package.json file (you need mongoose as well)
+    Make sure you are using mongoose >= v4.0.1 as older versions gave problems
   ```javascript
     "dependencies": {
       ...
