@@ -56,11 +56,10 @@ DS.prototype.init = function(mongoose) {
     require('./models/user');
     require('./models/user_subscription_settings_schema');
     require('./models/resources');
-        /*
+    /*
         This is just to make referencing the models easier within the buzz modules.
         The model name you use here must match the name you used in the schema file.
-     */
-     */
+    */
     this.models = {
         appraisal: mongoose.model('appraisals'),
         module: mongoose.model('modules'),
