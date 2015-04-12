@@ -1,8 +1,4 @@
 /**
- * Created by Thinus on 2015-04-11.
- */
-
-/**
  * This is the object used to contain the loaded models
  * @constructor
  */
@@ -60,13 +56,13 @@ DS.prototype.init = function(mongoose) {
         The model name you use here must match the name you used in the schema file.
     */
     this.models = {
+        space: mongoose.model('spaces'),
         appraisal: mongoose.model("appraisals"),
         module: mongoose.model('modules'),
         notification: mongoose.model('notifications'),
         post: mongoose.model('posts'),
         role: mongoose.model('roles'),
         serviceRestriction: mongoose.model('servicerestrictions'),
-        space: mongoose.model('spaces'),
         subscription: mongoose.model('subscriptions'),
         thread: mongoose.model('threads'),
         user: mongoose.model('users'),

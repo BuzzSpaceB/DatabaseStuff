@@ -7,12 +7,10 @@ var AppraisalSchema = mongoose.Schema({
     not_rated_icon          : { data: Buffer, contentType: String },       /* Default icon when the appraisal ahs not been rated */
     active_from             : Date,          /* The day from when the appraisal is active */
     active_to               : Date,          /* The day up until the appraisal will be active */
-    appraisal_ratings       :                /* The set of valid ratings for the appraisal */
-        [{
+    appraisal_ratings       : [{
             rating_name   : String,
             rating        : Number,
             rating_Icon   : { data: Buffer, contentType: String }
-        }]
+        }]  /* The set of valid ratings for the appraisal */
 });
-
 module.exports = mongoose.model("appraisals", AppraisalSchema);
