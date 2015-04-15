@@ -51,6 +51,7 @@ DS.prototype.init = function(mongoose) {
     require('./models/user');
     require('./models/user_subscription_settings_schema');
     require('./models/resources');
+    require('./models/resources_constraints');
     /*
         This is just to make referencing the models easier within the buzz modules.
         The model name you use here must match the name you used in the schema file.
@@ -68,6 +69,7 @@ DS.prototype.init = function(mongoose) {
         user: mongoose.model('users'),
         userSubscriptionSettings: mongoose.model('usersubscriptionsettings'),
         resource: mongoose.model('resources')
+        resourcesConstraints: mongoose.model('resources_constraints');
     }
 };
 
