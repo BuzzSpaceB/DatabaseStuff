@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js",
+    "test2": "node test/test2.js",
+    "test3": "node test/test3.js",
     "start": "node index.js"
   },
   "repository": {
