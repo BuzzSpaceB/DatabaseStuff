@@ -68,8 +68,8 @@ DS.prototype.init = function(mongoose) {
         thread: mongoose.model('threads'),
         user: mongoose.model('users'),
         userSubscriptionSettings: mongoose.model('usersubscriptionsettings'),
-        resource: mongoose.model('resources')
-        resourcesConstraints: mongoose.model('resources_constraints');
+        resource: mongoose.model('resources'),
+        resourcesConstraints: mongoose.model('resources_constraints')
     }
 };
 
