@@ -63,6 +63,7 @@ DS.prototype.init = function(mongoose) {
         notification: mongoose.model('notifications'),
         post: mongoose.model('posts'),
         role: mongoose.model('roles'),
+        service: mongoose.model('services'),
         serviceRestriction: mongoose.model('servicerestrictions'),
         subscription: mongoose.model('subscriptions'),
         thread: mongoose.model('threads'),
