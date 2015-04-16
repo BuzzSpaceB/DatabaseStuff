@@ -6,7 +6,7 @@ var UserSchema = mongoose.Schema({
     roles               : [{role_name : [String], module: [String]}],      /* Array of Roles & modules of the user as from LDAP */
     modules      		: [String],          /* Array of Modules that is active for the user */
 	post_count			: Number,
-	status_value		: Number, 			 /* The status of the user as calculated by a status calculator */
+	status_value		: Number 			 /* The status of the user as calculated by a status calculator */
 });
 
 UserSchema.methods.validPassword = function(password) {
